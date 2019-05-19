@@ -1,5 +1,8 @@
 #ifndef _fizzbuzz_
 #define _fizzbuzz_
+#include <regex>
+#include <iostream>
+#include <string>
 const std:: string multiple_3_word = "FIZZ";
 const std:: string multiple_5_word = "BUZZ";
 int is_multiple_5 (std::string exam_string);
