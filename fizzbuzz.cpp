@@ -1,8 +1,9 @@
 #include <regex>
 #include <iostream>
 #include <string>
-const std:: string multiple_3_word = "FIZZ";
-const std:: string multiple_5_word = "BUZZ";
+#include "fizzbuzz.h"
+/*const std:: string multiple_3_word = "FIZZ";
+const std:: string multiple_5_word = "BUZZ";*/
 int is_multiple_5 (std::string exam_string){
 	if(exam_string.length() == 0){
 		return -1;
@@ -53,20 +54,24 @@ void output_forming(std::string exam_str, std::string* out_str){
 	if(out_str->length() == 0)
         *out_str = exam_str;
 }
-
-int main(int ac, char ** av){
-	int i;
-	std::string inp_str, out_str, exam_str;
-	getline(std::cin, inp_str, '\n');
-	std::smatch numbers;
+void fizzbuzz_ing(std::string inp_str, std::string* gen_out_str){
+    std::string out_str, exam_str;
+    std::smatch numbers;
 	std::regex reg_not_numbers("([\\w]*[a-zA-Z]+[0-9]+[\\w]*|[\\w]*[0-9]+[a-zA-Z]+[\\w]*)"); 
 	inp_str = std:: regex_replace(inp_str, reg_not_numbers, "");
 	std::regex reg_numbers("([0-9]+)"); 
 	while(std:: regex_search(inp_str, numbers, reg_numbers)){
 	    exam_str = numbers[1];
 	    output_forming(exam_str, &out_str);
-	    std::cout << out_str << std::endl;
 	    inp_str = numbers.suffix().str();
+	    *gen_out_str += out_str + "\n";
 	}
+}
+int main(int ac, char ** av){
+	int i;
+	std::string inp_str, out_str;
+	getline(std::cin, inp_str, '\n');
+	fizzbuzz_ing(inp_str, &out_str);
+	std::cout << out_str << std::endl;
 	return 0;
 }
