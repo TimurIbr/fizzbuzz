@@ -67,11 +67,4 @@ void fizzbuzz_ing(std::string inp_str, std::string* gen_out_str){
 	    *gen_out_str += out_str + "\n";
 	}
 }
-int main(int ac, char ** av){
-	int i;
-	std::string inp_str, out_str;
-	getline(std::cin, inp_str, '\n');
-	fizzbuzz_ing(inp_str, &out_str);
-	std::cout << out_str << std::endl;
-	return 0;
-}
+
