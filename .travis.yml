@@ -1,0 +1,10 @@
+language: cpp
+sudo: false
+os: 
+  -linux
+  -windows
+  
+script:
+  - make
+  - ./fizzbuzz
+  - ./fizzbuzz_tests
