@@ -2,7 +2,7 @@
 This is a task from class.
 
 Task: 
-1 - Read a number sequance
+1 - Read a posotove number sequance
 2 - Write the sequance withe the following changes:
 	a) If the number is dividable by 3 - write FIZZ instead
 	b) If the number is dividable by 5 - write BUZZ instead
