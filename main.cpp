@@ -1,7 +1,7 @@
 #include <regex>
 #include <iostream>
 #include <string>
-#include "fizzbuzz.h"
+#include "fizzbuzz.hpp"
 
 int main(int ac, char ** av){
 	int i;
