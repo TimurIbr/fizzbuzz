@@ -1,0 +1,7 @@
+fizzbuzz
+fizzbuzz_tests
+*.o
+*.md
+*.txt
+*.exe
+*.out
