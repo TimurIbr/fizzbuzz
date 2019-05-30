@@ -6,22 +6,12 @@
 #include "fizzbuzz.hpp"
 // # == FIZZ; @ == BUZZ; #@ == FIZZBUZZ
 void tests_legeda(std::string* test_case_answer){
-	try {
     	std::regex reg_into_endl ("[\\s]");
     	std::regex reg_into_FIZZ ("(#)");
     	std::regex reg_into_BUZZ ("(@)");
-	}
-	catch (const std::regex_error& re) {
-        std::cout << "regex_error caught: regex creation" << re.what() << std::endl;
-    	}
-	try{
         *test_case_answer = std::regex_replace (*test_case_answer, reg_into_FIZZ, std::string(multiple_3_word) );
 	*test_case_answer = std::regex_replace (*test_case_answer, reg_into_BUZZ, std::string(multiple_5_word) );
 	*test_case_answer = std::regex_replace (*test_case_answer, reg_into_endl, std::string("\n") );
-	}
-	catch (const std::regex_error& re) {
-        std::cout << "regex_error caught: regex usage" << re.what() << std::endl;
-    	}
     
 }
 const int num_of_cases = 5;
@@ -85,7 +75,7 @@ int main (int ac, char **av){
 	}
 	catch (const std::regex_error& re) {
        		std::cout << "regex_error caught in fizzbuzz: " << re.what() << std::endl;
-    }
+    	}
 	    
 	    tests_log << "\tcase input:\n" << test_case << std::endl;
 	    tests_log << "\texpecting answer:\n" << test_case_answer << std::endl;
