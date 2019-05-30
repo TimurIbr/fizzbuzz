@@ -6,4 +6,4 @@ os:
   
 script:
   - make
-
+  - ./fizzbuzz_tests deleted 
