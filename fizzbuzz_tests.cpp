@@ -9,9 +9,15 @@ void tests_legeda(std::string* test_case_answer){
     std::regex reg_into_endl ("[\\s]");
     std::regex reg_into_FIZZ ("(#)");
     std::regex reg_into_BUZZ ("(@)");
-    *test_case_answer = std::regex_replace (*test_case_answer, reg_into_FIZZ, std::string(multiple_3_word) );
+	try {
+        *test_case_answer = std::regex_replace (*test_case_answer, reg_into_FIZZ, std::string(multiple_3_word) );
 	*test_case_answer = std::regex_replace (*test_case_answer, reg_into_BUZZ, std::string(multiple_5_word) );
 	*test_case_answer = std::regex_replace (*test_case_answer, reg_into_endl, std::string("\n") );
+    	}
+	catch (const std::regex_error& re) {
+        std::cout << "regex_error caught: " << re.what() << std::endl;
+    	}
+    
 }
 const int num_of_cases = 5;
 std::string def_test_case[num_of_cases] = {"-1       90",
