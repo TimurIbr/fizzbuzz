@@ -6,10 +6,10 @@
 #include "fizzbuzz.hpp"
 // # == FIZZ; @ == BUZZ; #@ == FIZZBUZZ
 void tests_legeda(std::string* test_case_answer){
-    std::regex reg_into_endl ("[\\s]");
-    std::regex reg_into_FIZZ ("(#)");
-    std::regex reg_into_BUZZ ("(@)");
 	try {
+    	std::regex reg_into_endl ("[\\s]");
+    	std::regex reg_into_FIZZ ("(#)");
+    	std::regex reg_into_BUZZ ("(@)");
         *test_case_answer = std::regex_replace (*test_case_answer, reg_into_FIZZ, std::string(multiple_3_word) );
 	*test_case_answer = std::regex_replace (*test_case_answer, reg_into_BUZZ, std::string(multiple_5_word) );
 	*test_case_answer = std::regex_replace (*test_case_answer, reg_into_endl, std::string("\n") );
@@ -74,8 +74,14 @@ int main (int ac, char **av){
         }
         test_case_out = "";
         tests_legeda(&test_case_answer);
-	    tests_log << "\tcase # " << i << std::endl;
-	    fizzbuzz_ing (test_case, &test_case_out);
+	tests_log << "\tcase # " << i << std::endl;
+	try {
+		fizzbuzz_ing (test_case, &test_case_out);
+	}
+	catch (const std::regex_error& re) {
+       		std::cout << "regex_error caught in fizzbuzz: " << re.what() << std::endl;
+    }
+	    
 	    tests_log << "\tcase input:\n" << test_case << std::endl;
 	    tests_log << "\texpecting answer:\n" << test_case_answer << std::endl;
 	    tests_log << "\tprogram out:\n" << test_case_out << std::endl;
