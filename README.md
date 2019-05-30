@@ -1,7 +1,7 @@
 # fizzbuzz
-DESCRIPTION
+#DESCRIPTION:
 
-This is a task from class.
+	This is a task from class.
 
 Task: 
 
@@ -13,16 +13,19 @@ Task:
 		d) Otherwise write the number itself.
 	3. Also it is forbidden to use division operation and operation of receiving the remainder.
 
-TO BUILD
+#TO BUILD
 
-make -- builds program fizzbuzz and fizzbuzz_tests
+	make -- builds program fizzbuzz and fizzbuzz_tests
 
-USAGE
-	fizzbuzz:
-fizzbuzz takes number sequence from console input.
-	fizzbuzz_tests:
-fizzbuzz_tests reads testing number sequence from fizzbuzz_tests.txt and 
-checks results with fizzbuzz_test_answers.txt, errors are printed in tests_log.txt .
-fizzbuzz_test_answers.txt should printed by tester.
-If there is no fizzbuzz_tests.txt default tests will be used insted.
+#USAGE
+fizzbuzz:
 
+	fizzbuzz takes number sequence from console input.
+fizzbuzz_tests:
+
+	1.fizzbuzz_test_answers.txt should be printed by tester.
+	(If there is no fizzbuzz_tests.txt default tests will be used insted.)
+	2.fizzbuzz_tests reads testing number sequence from fizzbuzz_tests.txt. 
+	3.it checks program output with fizzbuzz_test_answers.txt. 
+	4.errors are printed in tests_log.txt .
+	
