@@ -94,7 +94,7 @@ void fizzbuzz_ing(std::string inp_str, std::string* gen_out_str){
     	}
 	std::string out_str, exam_str;
 	std::smatch numbers;
-/*	std::regex reg_not_numbers("([\\w]*[a-zA-Z]+[0-9]+[\\w]*|[\\w]*[0-9]+[a-zA-Z]+[\\w]*)"); 
+	std::regex reg_not_numbers("([\\w]*[a-zA-Z]+[0-9]+[\\w]*|[\\w]*[0-9]+[a-zA-Z]+[\\w]*)"); 
 	inp_str = std:: regex_replace(inp_str, reg_not_numbers, ""); //delites not numbers in inp_str (input of function)
 	std::regex reg_numbers("(-?[0-9]+)"); 
 	while(std:: regex_search(inp_str, numbers, reg_numbers)){ //searches numbers in inp_str (input of function)
@@ -103,7 +103,5 @@ void fizzbuzz_ing(std::string inp_str, std::string* gen_out_str){
 	    inp_str = numbers.suffix().str();
 	    *gen_out_str += out_str + "\n";
 	}
-	*/
-	std::cout << "this is trevis test momemt" << std::endl;
 }
 #undef this_function_name
