@@ -1,4 +1,5 @@
 language: cpp
+compiler: g++-7
 sudo: false
 os: 
   -linux
